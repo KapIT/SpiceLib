@@ -1,0 +1,18 @@
+[submodule "Spicelib-Commands"]
+	path = Spicelib-Commands
+	url = https://github.com/KapIT/Spicelib-Commands.git
+[submodule "Spicelib-Documentation"]
+	path = Spicelib-Documentation
+	url = https://github.com/KapIT/Spicelib-Documentation.git
+[submodule "Spicelib-Logging"]
+	path = Spicelib-Logging
+	url = https://github.com/KapIT/Spicelib-Logging.git
+[submodule "Spicelib-Reflect"]
+	path = Spicelib-Reflect
+	url = https://github.com/KapIT/Spicelib-Reflect.git
+[submodule "Spicelib-Util"]
+	path = Spicelib-Util
+	url = https://github.com/KapIT/Spicelib-Util.git
+[submodule "Spicelib-XML-Mapper"]
+	path = Spicelib-XML-Mapper
+	url = https://github.com/KapIT/Spicelib-XML-Mapper.git
