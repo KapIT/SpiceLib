@@ -1,9 +1,6 @@
 [submodule "Spicelib-Commands"]
 	path = Spicelib-Commands
 	url = https://github.com/KapIT/Spicelib-Commands.git
-[submodule "Spicelib-Documentation"]
-	path = Spicelib-Documentation
-	url = https://github.com/KapIT/Spicelib-Documentation.git
 [submodule "Spicelib-Logging"]
 	path = Spicelib-Logging
 	url = https://github.com/KapIT/Spicelib-Logging.git
