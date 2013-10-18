@@ -31,13 +31,13 @@
     </organization>
 
     <issueManagement>
-        <url>https://github.com/KapIT/parsley/issues</url>
+        <url>https://github.com/KapIT/SpiceLib/issues</url>
         <system>GitHub Issues</system>
     </issueManagement>
 
     <scm>
-        <url>https://github.com/KapIT/parsley</url>
-        <connection>scm:git:git://github.com/KapIT/parsley.git</connection>
+        <url>https://github.com/KapIT/SpiceLib</url>
+        <connection>scm:git:git://github.com/KapIT/SpiceLib.git</connection>
         <!--<developerConnection>scm:git:git@github.com:kevinsawicki/github-maven-example.git</developerConnection>-->
     </scm>
 
@@ -62,13 +62,13 @@
 
     <properties>
         <!-- dependency version -->
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <flex.sdk.version>4.6.b.23201</flex.sdk.version>
-        <flex-mojos.version>4.0-RC2</flex-mojos.version>
-        <player.version>10.2</player.version>
-        <flex-debug>true</flex-debug>
-        <flex-optimize>false</flex-optimize>
+        <flex.sdk.version>4.5.1.21328</flex.sdk.version>
+		<player.version>10.2</player.version>
+        <flex-debug>false</flex-debug>
+        <flex-optimize>true</flex-optimize>
         <flex-verbose-stacktraces>true</flex-verbose-stacktraces>
+        <flex-mojos.version>4.0-RC2</flex-mojos.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <dependencies>
@@ -96,30 +96,6 @@
 			<scope>test</scope>
 		</dependency>
     </dependencies>
-
-
-    <repositories>
-        <repository>
-            <id>sonatype-flexmojos</id>
-            <name>Sonatype FlexMojos repository</name>
-            <url>http://repository.sonatype.org/content/groups/flexgroup/</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-
-
-    <pluginRepositories>
-        <pluginRepository>
-            <id>sonatype-flexmojos</id>
-            <name>Sonatype FlexMojos repository</name>
-            <url>https://repository.sonatype.org/content/groups/flexgroup/</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </pluginRepository>
-    </pluginRepositories>
 
 
 </project>
