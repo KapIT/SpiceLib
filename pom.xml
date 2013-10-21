@@ -9,6 +9,20 @@
     <name>${project.groupId} ${project.artifactId} ${project.version}</name>
     <description>${project.groupId} ${project.artifactId} ${project.version}</description>
     <packaging>pom</packaging>
+    
+    
+    <properties>
+        <!-- dependency version -->
+        <flex.sdk.version>4.5.1.21328</flex.sdk.version>
+		<player.version>10.2</player.version>
+        <flex-debug>false</flex-debug>
+        <flex-optimize>true</flex-optimize>
+        <flex-verbose-stacktraces>true</flex-verbose-stacktraces>
+        <flex-mojos.version>4.0-RC2</flex-mojos.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <internal.repository.location>file://${project.build.directory}/mvn-repository</internal.repository.location>
+        <github.global.server>github</github.global.server>
+    </properties>
 
     <modules>
     	<module>Spicelib-Commands</module>
@@ -58,18 +72,19 @@
             <id>fdecampredon</id>
         </developer>
     </developers>
+    
+    <distributionManagement>
+	    <repository>
+		    <id>internal.releases.repo</id>
+		    <name>Temporary Staging Repository</name>
+		    <url>${internal.repository.location}/releases</url>
+	    </repository>
+	    <snapshotRepository>
+	    	<id>internal.snapshot.repo</id>
+	    	<url>${internal.repository.location}/snapshots</url>
+    	</snapshotRepository>
+	</distributionManagement>
 
-
-    <properties>
-        <!-- dependency version -->
-        <flex.sdk.version>4.5.1.21328</flex.sdk.version>
-		<player.version>10.2</player.version>
-        <flex-debug>false</flex-debug>
-        <flex-optimize>true</flex-optimize>
-        <flex-verbose-stacktraces>true</flex-verbose-stacktraces>
-        <flex-mojos.version>4.0-RC2</flex-mojos.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
 
     <dependencies>
         <dependency>
@@ -96,6 +111,35 @@
 			<scope>test</scope>
 		</dependency>
     </dependencies>
+    
+    <build>
+	    <plugins>
+	        <plugin>
+	            <groupId>com.github.github</groupId>
+	            <artifactId>site-maven-plugin</artifactId>
+	            <version>0.8</version>
+	            <configuration>
+	                <message>Maven artifacts for ${project.groupId} ${project.artifactId} ${project.version}</message>  <!-- git commit message -->
+	                <noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
+	                <outputDirectory>${project.build.directory}/mvn-repository</outputDirectory> <!-- matches distribution management repository url above -->
+	                <branch>refs/heads/master</branch>                       <!-- remote branch name -->
+	                <includes><include>**/*</include></includes>
+	                <repositoryName>maven-repository</repositoryName>      <!-- github repo name -->
+	                <repositoryOwner>KapIT</repositoryOwner>    <!-- github username  -->
+             		<merge>true</merge>
+	            </configuration>
+	            <executions>
+	              <!-- run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase -->
+	              <execution>
+	                <goals>
+	                  <goal>site</goal>
+	                </goals>
+	                <phase>deploy</phase>
+	              </execution>
+	            </executions>
+	        </plugin>
+	    </plugins>
+	</build>
 
 
 </project>
